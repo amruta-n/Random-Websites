@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Blockchain Technology</title>
+</head>
+<body 
+	style="margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;" >
+	<div class="top">
+		<div id="name">BLOCKCHAIN</div>
+		<button id="but2" style="position: absolute;" onclick="chgTheme()">Change Theme</button>
+		<script>
+			function chgTheme(){
+				if (localStorage.clickcount) {
+      				localStorage.clickcount = Number(localStorage.clickcount)+1;
+    			} else {
+      				localStorage.clickcount = 1;
+    			}
+				if(localStorage.clickcount %2==0){
+					document.getElementById("ans").style.color = "#000";
+					document.getElementById("mt").style.color = "#000";
+  					document.getElementById("nba").style.color = "#000";
+  					document.getElementById("nma").style.color = "#000";
+  					document.getElementById("nna").style.color = "#000";
+  					document.getElementById("but2").style.left = "90px";
+				}else{
+					document.getElementById("ans").style.color = "#33C2CE";
+					document.getElementById("mt").style.color = "#33C2CE";
+  					document.getElementById("nba").style.color = "magenta";
+  					document.getElementById("nma").style.color = "blue";
+  					document.getElementById("nna").style.color = "#A1CE33";
+  					document.getElementById("but2").style.left = "1300px";
+				}
+				
+			}
+		</script>
+	</div>
+	<div class="main">
+		<div class="what">
+		<div id="que">
+			What is Blockchain?
+		</div>
+		<div id="ans">
+			<p>
+				Blockchain is a system of recording information in a way that makes it difficult or impossible to change, hack, or cheat the system.
+
+				A blockchain is essentially a digital ledger of transactions that is duplicated and distributed across the entire network of computer systems on the blockchain. Each block in the chain contains a number of transactions, and every time a new transaction occurs on the blockchain, a record of that transaction is added to every participants ledger. The decentralised database managed by multiple participants is known as Distributed Ledger Technology (DLT).
+
+				Blockchain is a type of DLT in which transactions are recorded with an immutable cryptographic signature called a hash.
+			</p>
+		</div>
+	</div>
+	<div class="more">
+		<p id="mt"></p>
+		<button id="but1" onclick="chgTxt()">more info...</button>
+		<script>
+			function chgTxt(){
+				var x=document.getElementById('mt').innerHTML;
+				if(x==""){
+					document.getElementById('but1').innerHTML="less info...";
+					document.getElementById('mt').innerHTML='There have been many attempts to create digital money in the past, but they have always failed.The prevailing issue is trust. If someone creates a new currency called the X dollar, how can we trust that they wont give themselves a million X dollars, or steal your X dollars for themselves? Bitcoin was designed to solve this problem by using a specific type of database called a blockchain. Most normal databases, such as an SQL database, have someone in charge who can change the entries (e.g. giving themselves a million X dollars). Blockchain is different because nobody is in charge; it’s run by the people who use it. What’s more, bitcoins can’t be faked, hacked or double spent – so people that own this money can trust that it has some value.';
+				}else{
+					document.getElementById('but1').innerHTML="more info...";
+					document.getElementById('mt').innerHTML='';
+				}
+			}
+		</script>
+	</div>
+	<div class="Imgs">
+		<div>
+			<img id="myImage" src="download.jpeg">
+		</div>
+		<button id="but3" onclick="changeImg()">Change Image</button>
+		<script>
+			function changeImg(){
+				var img=document.getElementById('myImage');
+				if(img.src.match("d2.jpeg")){
+					img.src = "download.jpeg";
+				}else {
+					img.src = "d2.jpeg";
+				}
+			}
+		</script>
+	</div>
+	
+	<div class="concepts">
+		<div id="heading">
+			Important concepts and terms 
+		</div>
+		<div id="blocks">
+			<div id="nb">Blocks</div>
+			<p id="nba">
+				Every chain consists of multiple blocks and each block has three basic elements:
+				The data in the block.
+				A 32-bit whole number called a nonce. The nonce is randomly generated when a block is created, which then generates a block header hash. 
+				The hash is a 256-bit number wedded to the nonce. It must start with a huge number of zeroes (i.e., be extremely small).
+				When the first block of a chain is created, a nonce generates the cryptographic hash. The data in the block is considered signed and forever tied to the nonce and hash unless it is mined.  
+			</p>
+			<img src="block.png">
+		</div>
+		<div id="miners">
+			<div id="nm">Miners</div>
+			<p id="nma">
+				Miners create new blocks on the chain through a process called mining.
+
+				In a blockchain every block has its own unique nonce and hash, but also references the hash of the previous block in the chain, so mining a block isn't easy, especially on large chains.
+
+				Miners use special software to solve the incredibly complex math problem of finding a nonce that generates an accepted hash. Because the nonce is only 32 bits and the hash is 256, there are roughly four billion possible nonce-hash combinations that must be mined before the right one is found. When that happens miners are said to have found the "golden nonce" and their block is added to the chain. 
+
+				Making a change to any block earlier in the chain requires re-mining not just the block with the change, but all of the blocks that come after. This is why it's extremely difficult to manipulate blockchain technology. Think of it is as "safety in math" since finding golden nonces requires an enormous amount of time and computing power.
+
+				When a block is successfully mined, the change is accepted by all of the nodes on the network and the miner is rewarded financially.
+			</p>
+			<img src="minig.png">
+		</div>
+		<div id="nodes">
+			<div id="nn">Nodes</div>
+			<p id="nna">
+				One of the most important concepts in blockchain technology is decentralization. No one computer or organization can own the chain. Instead, it is a distributed ledger via the nodes connected to the chain. Nodes can be any kind of electronic device that maintains copies of the blockchain and keeps the network functioning. 
+
+				Every node has its own copy of the blockchain and the network must algorithmically approve any newly mined block for the chain to be updated, trusted and verified. Since blockchains are transparent, every action in the ledger can be easily checked and viewed. Each participant is given a unique alphanumeric identification number that shows their transactions.
+
+				Combining public information with a system of checks-and-balances helps the blockchain maintain integrity and creates trust among users. Essentially, blockchains can be thought of as the scaleability of trust via technology. 
+			</p>
+			<img src="nodes.png">
+		</div>
+	</div>
+	<div id="hist">
+		<div id="history">
+			History of Blockchain
+		</div> 
+		<button onclick="hist()">Click here to know the history!</button>
+		<p id="nd"></p>
+
+
+		<script>
+			function hist(){
+				var par = document.createElement("p");
+				par.setAttribute('class', 'abc');
+				var tex = document.createTextNode("1991 A cryptographically secured chain of blocks is described for the first time by Stuart Haber and W Scott Stornetta 1998 Computer scientist Nick Szabo works on bit gold, a decentralised digital currency 2000 Stefan Konst publishes his theory of cryptographic secured chains, plus ideas for implementation 2008 Developer(s) working under the pseudonym Satoshi Nakamoto release a white paper establishing the model for a blockchain 2009 Nakamoto implements the first blockchain as the public ledger for transactions made using bitcoin 2014 Blockchain technology is separated from the currency and its potential for other financial, interorganisational transactions is explored. Blockchain 2.0 is born, referring to applications beyond currency The Ethereum blockchain system introduces computer programs into the blocks, representing financial instruments such as bonds. These become known as smart contracts.");
+				par.appendChild(tex);
+				var ele= document.getElementById("hist");
+				ele.appendChild(par);
+			}
+		</script>
+		<button onclick="removeElementsByClass('abc')">Remove history</button>
+		<script>
+			function removeElementsByClass(className){
+    		var elements = document.getElementsByClassName(className);
+    		if(elements.length > 0){
+        		elements[0].parentNode.removeChild(elements[0]);
+        		}else{
+        		alert("Nothing to remove!");
+        		}
+        	}
+	    
+		</script>
+		
+    
+
+	</div>
+</div>
+	
+	
+	
+</body>
+</html>
