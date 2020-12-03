@@ -19,19 +19,58 @@
       				localStorage.clickcount = 1;
     			}
 				if(localStorage.clickcount %2==0){
+					if(document.getElementById("hiss")){
+						document.getElementById("hiss").style.color = "#000";
+					}
 					document.getElementById("ans").style.color = "#000";
 					document.getElementById("mt").style.color = "#000";
   					document.getElementById("nba").style.color = "#000";
   					document.getElementById("nma").style.color = "#000";
   					document.getElementById("nna").style.color = "#000";
   					document.getElementById("but2").style.left = "90px";
+  					document.getElementsByClassName("top")[0].style.backgroundColor="#000";
+  					document.getElementsByClassName("top")[0].style.color="#fff";
+  					document.getElementsByClassName("main")[0].style.backgroundColor="#fff";
+  					document.getElementsByTagName("button")[0].style.color="#000";
+  					document.getElementsByTagName("button")[0].style.backgroundColor="#fff";
+  					var x = document.getElementsByClassName("hdng");
+					var i;
+					for (i = 0; i < x.length; i++) {
+  						x[i].style.color = "#000";
+					}
+					var y = document.getElementsByTagName("button");
+					var j;
+					for (j = 1; j < y.length; j++) {
+  						y[j].style.color = "#fff";
+  						y[j].style.backgroundColor = "#000";
+					}
 				}else{
-					document.getElementById("ans").style.color = "#33C2CE";
-					document.getElementById("mt").style.color = "#33C2CE";
-  					document.getElementById("nba").style.color = "magenta";
-  					document.getElementById("nma").style.color = "blue";
-  					document.getElementById("nna").style.color = "#A1CE33";
+					if(document.getElementById("hiss")){
+						document.getElementById("hiss").style.color = "#fff";
+					}
+  					document.getElementById("ans").style.color = "#fff";
+					document.getElementById("mt").style.color = "#fff";
+  					document.getElementById("nba").style.color = "#fff";
+  					document.getElementById("nma").style.color = "#fff";
+  					document.getElementById("nna").style.color = "#fff";
   					document.getElementById("but2").style.left = "1300px";
+  					document.getElementsByClassName("top")[0].style.backgroundColor="#fff";
+  					document.getElementsByClassName("top")[0].style.color="#000";
+  					document.getElementsByClassName("main")[0].style.backgroundColor="#000";
+  					document.getElementsByTagName("button")[0].style.color="#fff";
+  					document.getElementsByTagName("button")[0].style.backgroundColor="#000";
+  					var x = document.getElementsByClassName("hdng");
+					var i;
+					for (i = 0; i < x.length; i++) {
+  						x[i].style.color = "#fff";
+					}
+					var y = document.getElementsByTagName("button");
+					var j;
+					for (j = 1; j < y.length; j++) {
+  						y[j].style.color = "#000";
+  						y[j].style.backgroundColor = "#fff";
+					}
+
 				}
 				
 			}
@@ -39,7 +78,7 @@
 	</div>
 	<div class="main">
 		<div class="what">
-		<div id="que">
+		<div id="que" class="hdng">
 			What is Blockchain?
 		</div>
 		<div id="ans">
@@ -86,11 +125,11 @@
 	</div>
 	
 	<div class="concepts">
-		<div id="heading">
+		<div id="heading" class="hdng">
 			Important concepts and terms 
 		</div>
 		<div id="blocks">
-			<div id="nb">Blocks</div>
+			<div id="nb" class="hdng">Blocks</div>
 			<p id="nba">
 				Every chain consists of multiple blocks and each block has three basic elements:
 				The data in the block.
@@ -101,7 +140,7 @@
 			<img src="block.png">
 		</div>
 		<div id="miners">
-			<div id="nm">Miners</div>
+			<div id="nm" class="hdng">Miners</div>
 			<p id="nma">
 				Miners create new blocks on the chain through a process called mining.
 
@@ -116,7 +155,7 @@
 			<img src="minig.png">
 		</div>
 		<div id="nodes">
-			<div id="nn">Nodes</div>
+			<div id="nn" class="hdng">Nodes</div>
 			<p id="nna">
 				One of the most important concepts in blockchain technology is decentralization. No one computer or organization can own the chain. Instead, it is a distributed ledger via the nodes connected to the chain. Nodes can be any kind of electronic device that maintains copies of the blockchain and keeps the network functioning. 
 
@@ -128,7 +167,7 @@
 		</div>
 	</div>
 	<div id="hist">
-		<div id="history">
+		<div id="history" class="hdng">
 			History of Blockchain
 		</div> 
 		<button onclick="hist()">Click here to know the history!</button>
@@ -139,6 +178,7 @@
 			function hist(){
 				var par = document.createElement("p");
 				par.setAttribute('class', 'abc');
+				par.setAttribute('id', 'hiss');
 				var tex = document.createTextNode("1991 A cryptographically secured chain of blocks is described for the first time by Stuart Haber and W Scott Stornetta 1998 Computer scientist Nick Szabo works on bit gold, a decentralised digital currency 2000 Stefan Konst publishes his theory of cryptographic secured chains, plus ideas for implementation 2008 Developer(s) working under the pseudonym Satoshi Nakamoto release a white paper establishing the model for a blockchain 2009 Nakamoto implements the first blockchain as the public ledger for transactions made using bitcoin 2014 Blockchain technology is separated from the currency and its potential for other financial, interorganisational transactions is explored. Blockchain 2.0 is born, referring to applications beyond currency The Ethereum blockchain system introduces computer programs into the blocks, representing financial instruments such as bonds. These become known as smart contracts.");
 				par.appendChild(tex);
 				var ele= document.getElementById("hist");
