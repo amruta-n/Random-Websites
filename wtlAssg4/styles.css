@@ -48,3 +48,15 @@ img{
 	margin-left: auto;
 	margin-right: auto;
 }
+
+button {
+	border: none;
+    padding: 9px;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #000;
+}
+#but2{
+	color: #000;
+    background-color: #fff;
+}
