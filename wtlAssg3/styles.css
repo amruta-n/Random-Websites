@@ -1,0 +1,52 @@
+body{
+	background-image: url("back2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+	font-size: 18px;
+	padding: 3px;
+	margin-left: 450px;
+	margin-top: 60px;
+}
+
+div {
+	background: #fff;
+	opacity: 0.9;
+	padding: 15px;
+	width: 50%
+	
+}
+
+form{
+	
+	padding-left: 30%;
+	
+}
+
+/*@media only (max-width: ){
+  body {
+    background-image: url('img_flowers.jpg');
+  }
+}*/
+
+#button{
+	padding: 0 20px;
+	font-size: 18px;
+	border-radius: 0px;
+	border: none;
+	box-sizing: border-box;
+	justify-content: center;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	background-color: #F5EC37;
+}
+
+input{
+	border-radius: 0px;
+	height: 30px;
+	font-size: 15px;
+	margin: 9px;
+	box-shadow: 9px;
+	border-radius: 15px;
+}

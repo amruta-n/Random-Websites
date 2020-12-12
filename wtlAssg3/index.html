@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+	<script src="validate.js"></script>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div>
+	<form name="myForm" onsubmit="return validateForm()" method="get">
+		<br>
+		<div id="uname">Username:</div>
+		<input type="text" name="uname">
+		<br>
+		<div id="email">Email ID:</div>
+		<input type="text" name="email">
+		<br>
+		<div id="phno">Phone number:</div>
+		<input type="number" name="phno" minlength="10" maxlength="10">
+		<br>
+		<div id="pswd">Password:</div>
+		<input type="text" name="pswd">
+		<br>
+		<div id="cpswd">Confirm Password:</div>
+		<input type="text" name="cpswd">
+		<br>
+		<div>
+			<input type="submit" value="Submit" id="button">
+		</div>
+		
+	</form>
+</div>
+	
+</body>
+</html>
